@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.tidal": "haskell",
+        "iterator": "cpp",
+        "*.ipp": "cpp",
+        "locale": "cpp",
+        "string": "cpp",
+        "__locale": "cpp"
+    }
+}

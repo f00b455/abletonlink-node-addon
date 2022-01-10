@@ -4,11 +4,11 @@ const AbletonLink = require("../index.js");
 link = new AbletonLink();
 
 
-while(true) {
-    var selection = readlineSync.question("\nWhat to do? ( isEnabled | enable | disable | isStartStopSyncEnabled | enableStartStopSync | disableStartStopSync | getNumPeers | getTempo | getTempoClean | setTempo | getQuantum | setQuantum | getBeat | getBeatClean | requestBeat | forceBeat | getPhase | getPhaseClean | isPlaying | play | stop | isAudioThread | setAppThread | setAudioThread )\n>");
-    
-    
-    switch(selection) {
+while (true) {
+    var selection = readlineSync.question("\nWhat to do? ( isEnabled | enable | disable | isStartStopSyncEnabled | enableStartStopSync | disableStartStopSync | getNumPeers | getTempo | getTempoClean | setTempo | getQuantum | setQuantum | getBeat | getBeatClean | requestBeat | forceBeat | getPhase | getPhaseClean | isPlaying | play | stop | isAudioThread | setAppThread | setAudioThread |getTimeAtBeat)\n>");
+
+
+    switch (selection) {
         case "isEnabled":
             console.log(link.isEnabled());
             break;
@@ -84,6 +84,10 @@ while(true) {
             break;
         case "setAudioThread":
             link.setAudioThread();
+            break;
+        case "getTimeAtBeat":
+            var beat = readlineSync.question("Beat: ");
+            console.log(link.getTimeAtBeat(parseInt(beat)));
             break;
         default:
             console.log("Command not found")
